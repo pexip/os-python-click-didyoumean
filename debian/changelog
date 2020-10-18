@@ -1,0 +1,11 @@
+python-click-didyoumean (0.0.3-2) unstable; urgency=medium
+
+  * Re-uploading source-only.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 18 Oct 2020 17:16:14 +0200
+
+python-click-didyoumean (0.0.3-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #972353)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 16 Oct 2020 14:22:10 +0200

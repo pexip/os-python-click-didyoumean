@@ -1,0 +1,35 @@
+Source: python-click-didyoumean
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-python,
+ python3-all,
+ python3-setuptools,
+Build-Depends-Indep:
+ python3-click,
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-click-didyoumean
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-click-didyoumean.git
+Homepage: https://github.com/click-contrib/click-didyoumean
+
+Package: python3-click-didyoumean
+Architecture: all
+Depends:
+ python3-click,
+ ${misc:Depends},
+ ${python3:Depends},
+Description: enables git-like did-you-mean feature in click
+ Click is a Python package for creating beautiful command line interfaces
+ in a composable way with as little code as necessary.  It's the "Command
+ Line Interface Creation Kit".  It's highly configurable but comes with
+ sensible defaults out of the box.
+ .
+ It aims to make the process of writing command line tools quick and fun
+ while also preventing any frustration caused by the inability to implement
+ an intended CLI API.
+ .
+ This package add the feature to do git-like did-you-mean feature in click.
