@@ -1,4 +1,4 @@
-python-click-didyoumean (0.0.3-2pexip1) pexip; urgency=medium
+python-click-didyoumean (0.0.3-2pexip1) pexip-bullseye; urgency=medium
 
   * Prepare Pexip packaging
 
