@@ -5,13 +5,16 @@ Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders:
  Thomas Goirand <zigo@debian.org>,
 Build-Depends:
- debhelper-compat (= 12),
- dh-python,
+ debhelper-compat (= 13),
  python3-all,
- python3-setuptools,
 Build-Depends-Indep:
- python3-click,
-Standards-Version: 4.5.0
+ dh-sequence-python3,
+ pybuild-plugin-pyproject,
+ python3-click <!nocheck>,
+ python3-poetry,
+ python3-pytest <!nocheck>
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-click-didyoumean
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-click-didyoumean.git
 Homepage: https://github.com/click-contrib/click-didyoumean

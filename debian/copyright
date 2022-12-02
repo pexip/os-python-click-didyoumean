@@ -1,13 +1,14 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: click-didyoumean
 Source: https://github.com/click-contrib/click-didyoumean
 
 Files: *
-Copyright: (c) 2016-2019, Timo Furrer <tuxtimo@gmail.com>
+Copyright: (c) 2016-2021, Timo Furrer <tuxtimo@gmail.com>
 License: Expat
 
 Files: debian/*
 Copyright: (c) 2020, Thomas Goirand <zigo@debian.org>
+ 2022, Carsten Schoenert <c.schoenert@t-online.de>
 License: Expat
 
 License: Expat

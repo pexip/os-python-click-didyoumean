@@ -1,3 +1,37 @@
+python-click-didyoumean (0.3.0-2) unstable; urgency=medium
+
+  * Team upload
+  * autopkgtest: Set an dependency on pytest
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Fri, 02 Dec 2022 19:30:42 +0100
+
+python-click-didyoumean (0.3.0-1) unstable; urgency=medium
+
+  * Team upload
+  * d/gbp.conf: Add basic default configuration
+  * d/watch: Switch to version 4 and git mode
+  * New upstream version 0.3.0
+  * d/control: Update build dependencies
+  * d/control: Set Rules-Requires-Root: no
+  * d/rules: Adjust build system to use pybuild
+  * d/python3-click-didyoumean.examples: Install also examples
+  * d/copyright: Update years data and copyright holder
+  * SalsaCI: Don't run BLC and ANY triggered calls
+  * d/u/metadata: Add fields FAQ and Repository
+  * autopkgtest: Add basic upstreasm test setup
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Wed, 30 Nov 2022 13:55:28 +0100
+
+python-click-didyoumean (0.0.3-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 22 Oct 2022 15:46:55 +0100
+
 python-click-didyoumean (0.0.3-2) unstable; urgency=medium
 
   * Re-uploading source-only.

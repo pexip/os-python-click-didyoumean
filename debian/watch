@@ -1,3 +1,9 @@
-version=3
-opts="uversionmangle=s/\.0rc/~rc/;s/\.0b1/~b1/;s/\.0b2/~b2/;s/\.0b3/~b3/;s/v//" \
-https://github.com/click-contrib/click-didyoumean/tags .*/[v]*(\d[brc\d\.]+)\.tar\.gz
+version=4
+
+opts="mode=git, \
+      pgpmode=none, \
+      compression=gz, \
+      dversionmangle=s/\+(debian|dfsg|ds|deb)([\.\d]+)?$//, \
+      uversionmangle=s/\.0rc/~rc/;s/\.0b1/~b1/;s/\.0b2/~b2/;s/\.0b3/~b3/;s/v//" \
+https://github.com/click-contrib/click-didyoumean.git \
+      refs/tags/v@ANY_VERSION@

@@ -1,17 +1,15 @@
-# vim swap files
+# editors
 *.swp
+.vscode
 
-# python bytecode files
+# Python bytecode files
 *.pyc
 __pycache__/
 
-# python setuptools
+# Python packaging
 *.egg-info
 dist/
-
-# python tox files
-.tox/
-.cache/
+poetry.lock
 
 # python virtualenv
-env/
+.python-version
