@@ -16,7 +16,7 @@ Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-click-didyoumean
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-click-didyoumean.git
 Homepage: https://github.com/click-contrib/click-didyoumean
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: python3-click-didyoumean
 Architecture: all
