@@ -1,13 +1,8 @@
-# -*- coding: utf-8 -*-
-
-"""
-Module to test functionality of the click ``did-you-mean`` extension.
-"""
-
-import pytest
 import click
+import pytest
 from click.testing import CliRunner
-from click_didyoumean import DYMGroup, DYMCommandCollection
+
+from click_didyoumean import DYMCommandCollection, DYMGroup
 
 
 @pytest.fixture(scope="function")
@@ -34,8 +29,10 @@ def test_basic_functionality_with_group(runner):
 
     result = runner.invoke(cli, ["barr"])
     assert result.output == (
-        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n\n"
-        "Error: No such command \"barr\".\n\n"
+        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n"
+        "Try 'cli --help' for help.\n"
+        "\n"
+        "Error: No such command 'barr'.\n\n"
         "Did you mean one of these?\n"
         "    barrr\n"
         "    bar\n"
@@ -66,8 +63,10 @@ def test_basic_functionality_with_commandcollection(runner):
     cli = DYMCommandCollection(sources=[cli1, cli2])
     result = runner.invoke(cli, ["barr"])
     assert result.output == (
-        "Usage: root [OPTIONS] COMMAND [ARGS]...\n\n"
-        "Error: No such command \"barr\".\n\n"
+        "Usage: root [OPTIONS] COMMAND [ARGS]...\n"
+        "Try 'root --help' for help.\n"
+        "\n"
+        "Error: No such command 'barr'.\n\n"
         "Did you mean one of these?\n"
         "    barrr\n"
         "    bar\n"
@@ -94,8 +93,10 @@ def test_cutoff_factor(runner):
     # if cutoff factor is 1.0 the match must be perfect.
     result = runner.invoke(cli, ["barr"])
     assert result.output == (
-        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n\n"
-        "Error: No such command \"barr\".\n"
+        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n"
+        "Try 'cli --help' for help.\n"
+        "\n"
+        "Error: No such command 'barr'.\n"
     )
 
 
@@ -123,8 +124,10 @@ def test_max_suggetions(runner):
     # if cutoff factor is 1.0 the match must be perfect.
     result = runner.invoke(cli, ["barr"])
     assert result.output == (
-        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n\n"
-        "Error: No such command \"barr\".\n\n"
+        "Usage: cli [OPTIONS] COMMAND [ARGS]...\n"
+        "Try 'cli --help' for help.\n"
+        "\n"
+        "Error: No such command 'barr'.\n\n"
         "Did you mean one of these?\n"
         "    barrr\n"
         "    baarr\n"
