@@ -1,0 +1,44 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -U pip poetry
+      - run: poetry config virtualenvs.create false
+      - run: poetry install
+      - run: flake8 --max-line-length 88 src/ tests/
+      - run: black --diff --check src/ tests/
+      - run: mypy src/ tests/
+      - run: pytest
+
+  cd:
+    needs: [ci]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python
+        if: startsWith(github.event.ref, 'refs/tags')
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - run: pip install -U pip poetry
+      - name: Publish package
+        if: startsWith(github.event.ref, 'refs/tags')
+        run: |
+          poetry publish --build --username __token__ --password ${{ secrets.PYPI_TOKEN }}

@@ -1,0 +1,7 @@
+Tests: upstream
+Depends:
+ python3-all,
+ python3-click,
+ python3-pytest,
+ @,
+Restrictions: allow-stderr
